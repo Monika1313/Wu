@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Wu.Extensions
 {
     /// <summary>
-    /// string拓展
+    /// string扩展
     /// </summary>
     public static class StringExtention
     {
@@ -41,5 +41,22 @@ namespace Wu.Extensions
             return Regex.IsMatch(ip, @"^((2[0-4]\d|25[0-5]|[1]?\d?\d)\.){3}(2[0-4]\d|25[0-5]|[1]?\d\d?)$");
         }
 
+        /// <summary>
+        /// 剔除字符串中的空格
+        /// </summary>
+        /// <param name="self"></param>
+        /// <returns></returns>
+        public static string RemoveSpace(this string self) => self.Replace(" ", string.Empty);
+
+
+        /// <summary>
+        /// 判断字符串是否包含中文
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        public static bool IsHasChinese(this string str)
+        {
+            return Regex.IsMatch(str, @"[\u4e00-\u9fa5]");
+        }
     }
 }
