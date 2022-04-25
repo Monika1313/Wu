@@ -33,7 +33,7 @@ namespace Wu.Utils
         /// <param name="data"></param>
         /// <param name="p"></param>
         /// <returns></returns>
-        public static UInt16 GetUInt16FromBigEndianBytes(byte[] data, int p)
+        public static ushort GetUInt16FromBigEndianBytes(byte[] data, int p)
         {
             return BitConverter.ToUInt16(SmallBigConvert(data, p, 2), 0);
         }
@@ -55,7 +55,7 @@ namespace Wu.Utils
         /// <param name="data"></param>
         /// <param name="p"></param>
         /// <returns></returns>
-        public static UInt64 GetUInt64FromBigEndianBytes(byte[] data, int p)
+        public static ulong GetUInt64FromBigEndianBytes(byte[] data, int p)
         {
             return BitConverter.ToUInt64(SmallBigConvert(data, p, 8), 0);
         }
@@ -66,7 +66,7 @@ namespace Wu.Utils
         /// <param name="data"></param>
         /// <param name="p"></param>
         /// <returns></returns>
-        public static Int16 GetInt16FromBigEndianBytes(byte[] data, int p)
+        public static short GetInt16FromBigEndianBytes(byte[] data, int p)
         {
             return BitConverter.ToInt16(SmallBigConvert(data, p, 2), 0);
         }
@@ -88,7 +88,7 @@ namespace Wu.Utils
         /// <param name="data"></param>
         /// <param name="p"></param>
         /// <returns></returns>
-        public static Int64 GetInt64FromBigEndianBytes(byte[] data, int p)
+        public static long GetInt64FromBigEndianBytes(byte[] data, int p)
         {
             return BitConverter.ToInt64(SmallBigConvert(data, p, 8), 0);
         }
