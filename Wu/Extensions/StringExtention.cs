@@ -58,5 +58,73 @@ namespace Wu.Extensions
         {
             return Regex.IsMatch(str, @"[\u4e00-\u9fa5]");
         }
+
+
+
+        #region 字符串长度处理
+        /// <summary>
+        /// 按单字节字符串向左填充长度
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="length"></param>
+        /// <param name="paddingChar"></param>
+        /// <returns></returns>
+        public static string PadLeftWhileDouble(this string input, int length, char paddingChar = '\0')
+        {
+            var singleLength = GetSingleLength(input);
+            return input.PadLeft(length - singleLength + input.Length, paddingChar);
+        }
+
+        /// <summary>
+        /// 获取字符串长度
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        private static int GetSingleLength(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                throw new ArgumentNullException();
+            }
+            return Regex.Replace(input, @"[^\x00-\xff]", "aa").Length;//计算得到该字符串对应单字节字符串的长度
+        }
+
+        /// <summary>
+        /// 按单字节字符串向右填充长度
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="length"></param>
+        /// <param name="paddingChar"></param>
+        /// <returns></returns>
+        public static string PadRightWhileDouble(this string input, int length, char paddingChar = '\0')
+        {
+            var singleLength = GetSingleLength(input);
+            return input.PadRight(length - singleLength + input.Length, paddingChar);
+        }
+
+        public static string PadLeftEx(this string str, int totalByteCount, char c = ' ')
+        {
+            Encoding coding = Encoding.GetEncoding("gb2312");
+            int dcount = 0;
+            foreach (char ch in str.ToCharArray())
+            {
+                if (coding.GetByteCount(ch.ToString()) == 2) dcount++;
+            }
+            string w = str.PadRight(totalByteCount - dcount, c);
+            return w;
+        }
+
+        public static string PadRightEx(this string str, int totalByteCount, char c = ' ')
+        {
+            Encoding coding = Encoding.GetEncoding("gb2312"); int dcount = 0;
+            foreach (char ch in str.ToCharArray())
+            {
+                if (coding.GetByteCount(ch.ToString()) == 2) dcount++;
+            }
+            string w = str.PadRight(totalByteCount - dcount, c);
+            return w;
+        }   
+        #endregion
     }
 }
