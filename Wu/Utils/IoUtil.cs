@@ -1,16 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wu.Helper
+namespace Wu.Utils
 {
-    /// <summary>
-    /// IO操作
-    /// </summary>
-    public static class Wu_IO
+    public class IOUtil
     {
         /// <summary>
         /// 根据文件路径返回文件夹目录
@@ -40,11 +36,6 @@ namespace Wu.Helper
             }                                         //目录不存在创建目录 并返回false
 
         }
-
-
-
-
-
 
     }
 }

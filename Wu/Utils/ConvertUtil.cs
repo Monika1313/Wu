@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wu.Helper
+namespace Wu.Utils
 {
     /// <summary>
     /// 格式转换操作
     /// </summary>
-    public static class Wu_Convert
+    public static class ConvertUtil
     {
         /// <summary>
         /// 截取字节数组 并转换大小端

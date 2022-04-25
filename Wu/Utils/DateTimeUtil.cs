@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wu.Helper
+namespace Wu.Utils
 {
-    public static class Wu_DateTime
+    public static class DateTimeUtil
     {
         /// <summary>
         /// 将时间转成long表示的秒
