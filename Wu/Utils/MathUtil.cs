@@ -8,7 +8,7 @@ namespace Wu.Utils
 {
     public class MathUtil
     {
-         /// <summary>
+        /// <summary>
         /// 将输入值标准化为 0~1的值
         /// </summary>
         /// <param name="input"></param>

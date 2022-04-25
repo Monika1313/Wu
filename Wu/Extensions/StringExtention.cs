@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -35,7 +36,21 @@ namespace Wu.Extensions
         public static string RemoveSpace(this string self) => self.Replace(" ", string.Empty);
 
 
-       
+        /// <summary>
+        /// 字符串MD5加密
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static string GetMD5(this string data)
+        {
+            //验证字符串
+            if (string.IsNullOrEmpty(data))
+                throw new ArgumentNullException(nameof(data));
+            //加密
+            var hash = MD5.Create().ComputeHash(Encoding.Default.GetBytes(data));
+            return Convert.ToBase64String(hash);
+        }
 
 
         #region 字符串长度处理
