@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Wu.Extensions.Judge
 {
+    /// <summary>
+    /// 字符串判断
+    /// </summary>
     public static class StringJudge
     {
         /// <summary>
@@ -32,9 +35,5 @@ namespace Wu.Extensions.Judge
         {
             return Regex.IsMatch(str, @"[\u4e00-\u9fa5]");
         }
-
-
-
-
     }
 }
