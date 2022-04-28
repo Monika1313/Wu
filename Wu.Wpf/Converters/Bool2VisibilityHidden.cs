@@ -14,7 +14,7 @@ namespace Wu.Wpf.Converters
     /// </summary>
     public class Bool2VisibilityHidden : ValueConverterBase<Bool2VisibilityHidden>
     {
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             bool b = System.Convert.ToBoolean(value);
             if (b)

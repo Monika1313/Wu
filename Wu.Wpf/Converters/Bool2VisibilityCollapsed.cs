@@ -10,7 +10,7 @@ using System.Windows.Data;
 namespace Wu.Wpf.Converters
 {
     /// <summary>
-    /// bool转换Visibility false为Hidden
+    /// bool转换Visibility false为Collapsed
     /// </summary>
     public class Bool2VisibilityCollapsed : ValueConverterBase<Bool2VisibilityCollapsed>
     {

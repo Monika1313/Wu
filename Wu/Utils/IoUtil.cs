@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Wu.Utils
 {
+    /// <summary>
+    /// IO操作
+    /// </summary>
     public class IOUtil
     {
         ///// <summary>

@@ -11,6 +11,7 @@ namespace Wu.Wpf.Converters
 {
     /// <summary>
     /// ValueConverter继承该基类
+    /// 用法示例:  xaml引入该命名空间cvt   Converter={cvt:转换器名称}
     /// </summary>
     /// <typeparam name="T">要实现转换的类型本身</typeparam>
     public abstract class ValueConverterBase<T> : MarkupExtension, IValueConverter where T : class, new()
