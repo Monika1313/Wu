@@ -8,7 +8,7 @@
     <PackageId>Wu</PackageId>
     <Authors>Monika1313</Authors>
     <Description>Wu通用工具类</Description>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <PackageProjectUrl>https://github.com/Monika1313/Wu</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Monika1313/Wu</RepositoryUrl>
   </PropertyGroup>

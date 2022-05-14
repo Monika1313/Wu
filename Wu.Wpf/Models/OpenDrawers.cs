@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Wu.Wpf.Models
 {
-    public class OpenDrawers
-    {
+    //public class OpenDrawers
+    //{
 
-        ///// <summary>
-        ///// definity
-        ///// </summary>
-        //public bool LeftDrawer { get => _LeftDrawer; set => SetProperty(ref _LeftDrawer, value); }
-        //private bool _LeftDrawer;
-    }
+    //    ///// <summary>
+    //    ///// definity
+    //    ///// </summary>
+    //    //public bool LeftDrawer { get => _LeftDrawer; set => SetProperty(ref _LeftDrawer, value); }
+    //    //private bool _LeftDrawer;
+    //}
 }
