@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Threading;
 
-namespace Wu.MVVM
+namespace Wu.Wpf.MVVM
 {
     //
     // 摘要:
