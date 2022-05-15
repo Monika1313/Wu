@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Threading;
 
-namespace Wu.Wpf.MVVM
+namespace Wu.Wpf.Mvvm
 {
     //
     // 摘要:
@@ -18,7 +13,7 @@ namespace Wu.Wpf.MVVM
         //
         // 摘要:
         //     Occurs when a property value changes.
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         //
         // 摘要:
@@ -43,7 +38,7 @@ namespace Wu.Wpf.MVVM
         // 返回结果:
         //     True if the value was changed, false if the existing value matched the desired
         //     value.
-        protected virtual bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
+        protected virtual bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string? propertyName = null)
         {
             if (EqualityComparer<T>.Default.Equals(storage, value))
             {
@@ -81,7 +76,7 @@ namespace Wu.Wpf.MVVM
         // 返回结果:
         //     True if the value was changed, false if the existing value matched the desired
         //     value.
-        protected virtual bool SetProperty<T>(ref T storage, T value, Action onChanged, [CallerMemberName] string propertyName = null)
+        protected virtual bool SetProperty<T>(ref T storage, T value, Action onChanged, [CallerMemberName] string? propertyName = null)
         {
             if (EqualityComparer<T>.Default.Equals(storage, value))
             {
@@ -102,7 +97,7 @@ namespace Wu.Wpf.MVVM
         //   propertyName:
         //     Name of the property used to notify listeners. This value is optional and can
         //     be provided automatically when invoked from compilers that support System.Runtime.CompilerServices.CallerMemberNameAttribute.
-        protected void RaisePropertyChanged([CallerMemberName] string propertyName = null)
+        protected void RaisePropertyChanged([CallerMemberName] string? propertyName = null)
         {
             OnPropertyChanged(new PropertyChangedEventArgs(propertyName));
         }
