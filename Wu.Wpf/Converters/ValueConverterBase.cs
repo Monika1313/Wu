@@ -21,27 +21,27 @@ namespace Wu.Wpf.Converters
         public virtual object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
             => throw new NotImplementedException();
 
-        private static T _Instance;
+        private static T _Instance = new();
 
         /// <summary>
         /// 在xmal中使用时,将自动获取到该方法
         /// </summary>
         /// <param name="serviceProvider"></param>
         /// <returns></returns>
-        public override object ProvideValue(IServiceProvider serviceProvider) => _Instance ?? (_Instance = new T());
+        public override object ProvideValue(IServiceProvider serviceProvider) => _Instance ??= new();
     }
 
     public abstract class MultiValueConverterBase<T> : MarkupExtension, IMultiValueConverter where T : class, new()
     {
 
-        private static T _Instance;
+        private static T _Instance = new();
 
         /// <summary>
         /// 在xmal中使用时,将自动获取到该方法
         /// </summary>
         /// <param name="serviceProvider"></param>
         /// <returns></returns>
-        public override object ProvideValue(IServiceProvider serviceProvider) => _Instance ?? (_Instance = new T());
+        public override object ProvideValue(IServiceProvider serviceProvider) => _Instance ??= new();
 
         public abstract object Convert(object[] values, Type targetType, object parameter, CultureInfo culture);
 

@@ -62,7 +62,9 @@ namespace Wu.Utils
 
         public static DateTime BeginOfMonth(this DateTime? dateTime)
         {
-            DateTime bmonth = System.Convert.ToDateTime(((DateTime)dateTime).ToString("yyyy-MM-01"));
+            if (dateTime == null)
+                throw new ArgumentNullException(nameof(dateTime));
+            DateTime bmonth = Convert.ToDateTime(((DateTime)dateTime).ToString("yyyy-MM-01"));
             return bmonth;
         }
         #endregion
@@ -81,6 +83,8 @@ namespace Wu.Utils
 
         public static DateTime EndOfMonth(this DateTime? dateTime)
         {
+            if (dateTime == null)
+                throw new ArgumentNullException(nameof(dateTime));
             DateTime emonth = Convert.ToDateTime(((DateTime)dateTime).AddMonths(1).ToString("yyyy-MM-01")).AddSeconds(-1);//月末
             return emonth;
         }
