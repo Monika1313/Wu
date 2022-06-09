@@ -15,7 +15,7 @@ namespace Wu.Wpf.Converters
         public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value == null || string.IsNullOrWhiteSpace(value?.ToString()))
-                return true;
+                return null;
             if (value is string)
             {
                 if(value.Equals("是"))
@@ -24,7 +24,7 @@ namespace Wu.Wpf.Converters
             return false;
         }
 
-        public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public override object? ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             if (value is bool val && val == true)
             {
