@@ -34,6 +34,7 @@ namespace Wu.Extensions
 
         /// <summary>
         /// 利用表达式树,深拷贝,效率高于反射
+        /// 参考 https://www.cnblogs.com/lsgsanxiao/p/8205096.html 
         /// </summary>
         /// <typeparam name="TIn"></typeparam>
         /// <typeparam name="TOut"></typeparam>
@@ -44,7 +45,6 @@ namespace Wu.Extensions
             {
                 ParameterExpression parameterExpression = Expression.Parameter(typeof(TIn), "p");
                 List<MemberBinding> memberBindingList = new List<MemberBinding>();
-
                 foreach (var item in typeof(TOut).GetProperties())
                 {
                     if (!item.CanWrite) continue;
@@ -52,10 +52,8 @@ namespace Wu.Extensions
                     MemberBinding memberBinding = Expression.Bind(item, property);
                     memberBindingList.Add(memberBinding);
                 }
-
                 MemberInitExpression memberInitExpression = Expression.MemberInit(Expression.New(typeof(TOut)), memberBindingList.ToArray());
                 Expression<Func<TIn, TOut>> lambda = Expression.Lambda<Func<TIn, TOut>>(memberInitExpression, new ParameterExpression[] { parameterExpression });
-
                 return lambda.Compile();
             }
 
