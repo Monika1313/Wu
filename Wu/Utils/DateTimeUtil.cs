@@ -47,51 +47,6 @@ namespace Wu.Utils
             return new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, time.Second);
         }
 
-
-        #region 月初
-        /// <summary>
-        /// 根据给定时间 返回月初
-        /// </summary>
-        /// <param name="dateTime"></param>
-        /// <returns></returns>
-        public static DateTime BeginOfMonth(this DateTime dateTime)
-        {
-            DateTime bmonth = Convert.ToDateTime(value: dateTime.ToString("yyyy-MM-01"));
-            return bmonth;
-        }
-
-        public static DateTime BeginOfMonth(this DateTime? dateTime)
-        {
-            if (dateTime == null)
-                throw new ArgumentNullException(nameof(dateTime));
-            DateTime bmonth = Convert.ToDateTime(((DateTime)dateTime).ToString("yyyy-MM-01"));
-            return bmonth;
-        }
-        #endregion
-
-        #region 月末
-        /// <summary>
-        /// 根据给定时间 返回月末
-        /// </summary>
-        /// <param name="dateTime"></param>
-        /// <returns></returns>
-        public static DateTime EndOfMonth(this DateTime dateTime)
-        {
-            DateTime emonth = Convert.ToDateTime(dateTime.AddMonths(1).ToString("yyyy-MM-01")).AddSeconds(-1);//月末
-            return emonth;
-        }
-
-        public static DateTime EndOfMonth(this DateTime? dateTime)
-        {
-            if (dateTime == null)
-                throw new ArgumentNullException(nameof(dateTime));
-            DateTime emonth = Convert.ToDateTime(((DateTime)dateTime).AddMonths(1).ToString("yyyy-MM-01")).AddSeconds(-1);//月末
-            return emonth;
-        }
-        #endregion
-
-
-
         /// <summary>
         /// 获取指定日期时间是 第几个季度
         /// </summary>
@@ -140,27 +95,6 @@ namespace Wu.Utils
         }
 
         /// <summary>
-        /// 根据年份季度返回季度末时间
-        /// </summary>
-        /// <param name="year">年</param>
-        /// <param name="quarter">季度</param>
-        public static DateTime EndOfQuarter(int year, int quarter)
-        {
-            //该年该季度月初
-            switch (quarter)
-            {
-                case 1:
-                    return EndOfMonth(new DateTime(year, 3, 1));
-                case 2:
-                    return EndOfMonth(new DateTime(year, 6, 1));
-                case 3:
-                    return EndOfMonth(new DateTime(year, 9, 1));
-                default:
-                    return EndOfMonth(new DateTime(year, 12, 1));
-            }
-        }
-
-        /// <summary>
         /// 获取时间戳 毫秒
         /// </summary>
         /// <returns></returns>
@@ -179,6 +113,36 @@ namespace Wu.Utils
             TimeSpan ts = DateTime.UtcNow - new DateTime(1970, 1, 1, 0, 0, 0, 0);
             return Convert.ToInt64(ts.TotalSeconds);
         }
+
+        /// <summary>
+        /// 今年年初
+        /// </summary>
+        public static DateTime BeginOfCurrentYear => new(DateTime.Now.Year, 1, 1);
+
+        /// <summary>
+        /// 今年年末
+        /// </summary>
+        public static DateTime EndOfCurrentYear => new(DateTime.Now.Year, 12, 31);
+
+        /// <summary>
+        /// 去年年初
+        /// </summary>
+        public static DateTime BeginOfLastYear => new(DateTime.Now.Year - 1, 1, 1);
+
+        /// <summary>
+        /// 去年年末
+        /// </summary>
+        public static DateTime EndOfLastYear => new(DateTime.Now.Year - 1, 12, 31);
+
+        /// <summary>
+        /// 明年年初
+        /// </summary>
+        public static DateTime BeginOfNextYear => new(DateTime.Now.Year + 1, 1, 1);
+
+        /// <summary>
+        /// 明年年末
+        /// </summary>
+        public static DateTime EndOfNextYear => new(DateTime.Now.Year - 1, 12, 31);
 
         #region MyRegion
         //public static void TestFun()

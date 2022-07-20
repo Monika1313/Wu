@@ -57,7 +57,8 @@ namespace Wu.Extensions
         /// <returns></returns>
         public static DateTime BeginOfMonth(this DateTime dateTime)
         {
-            DateTime bmonth = System.Convert.ToDateTime(dateTime.ToString("yyyy-MM-01"));
+            DateTime bmonth = dateTime.AddDays(1 - dateTime.Day);
+            //DateTime bmonth = System.Convert.ToDateTime(dateTime.ToString("yyyy-MM-01"));
             return bmonth;
         }
 
@@ -76,8 +77,9 @@ namespace Wu.Extensions
         /// <returns></returns>
         public static DateTime EndOfMonth(this DateTime dateTime)
         {
-            DateTime emonth = System.Convert.ToDateTime(dateTime.AddMonths(1).ToString("yyyy-MM-01")).AddDays(-1);//月末
-            return emonth;
+            //DateTime emonth = System.Convert.ToDateTime(dateTime.AddMonths(1).ToString("yyyy-MM-01")).AddDays(-1);//月末
+            dateTime.BeginOfMonth().AddMonths(1).AddDays(-1);
+            return dateTime;
         }
 
         public static DateTime EndOfMonth(this DateTime? dateTime)
