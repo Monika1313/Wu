@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Markup;
 
-namespace Wu.ComTool.Converters
+namespace Wu.Wpf.Converters
 {
     /// <summary>
     /// 绑定枚举列表

@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wu.ComTool.Converters
+namespace Wu.Wpf.Converters
 {
     /// <summary>
     /// 枚举类型添加该特性[TypeConverter(typeof(EnumDescriptionTypeConverter))]    可绑定Description列表
