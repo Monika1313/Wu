@@ -7,6 +7,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>Monika1313</Authors>
     <Description>Wu.Wpf类库</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
