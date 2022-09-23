@@ -15,5 +15,13 @@ namespace Wu.Wpf.Converters
             bool b = System.Convert.ToBoolean(value);
             return !b;
         }
+
+        //public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        //{
+        //    if (value == null)
+        //        return true;
+        //    bool b = System.Convert.ToBoolean(value);
+        //    return !b;
+        //}
     }
 }
