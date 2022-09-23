@@ -25,7 +25,7 @@ namespace Wu.Utils
         /// <typeparam name="T"></typeparam>
         /// <param name="jsonClass"></param>
         /// <returns></returns>
-        public static string Seriallize<T>(T jsonClass)
+        public static string SeriallizeIgnoreLoop<T>(T jsonClass)
         {
             return JsonConvert.SerializeObject(jsonClass, setting);
         }
