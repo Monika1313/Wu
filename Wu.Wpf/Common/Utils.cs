@@ -23,5 +23,35 @@ namespace Wu.Wpf.Common
             //不是UI线程
             return false;
         }
+
+        public static void ExecuteFun(Action action)
+        {
+            Action action2 = action;
+            if (IsUIThread())
+            {
+                action2();
+                return;
+            }
+
+            Application.Current.Dispatcher.Invoke(delegate
+            {
+                action2();
+            });
+        }
+
+        public static void ExecuteFunBeginInvoke(Action action)
+        {
+            Action action2 = action;
+            if (IsUIThread())
+            {
+                action2();
+                return;
+            }
+
+            Application.Current.Dispatcher.BeginInvoke((Action)delegate
+            {
+                action2();
+            });
+        }
     }
 }
