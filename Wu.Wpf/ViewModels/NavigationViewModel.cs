@@ -6,7 +6,7 @@ using System;
 using Wu.Wpf.Events;
 using Wu.Wpf.Extensions;
 
-namespace Wu.CommTool.ViewModels
+namespace Wu.ViewModels
 {
     /// <summary>
     /// 窗口导航类
