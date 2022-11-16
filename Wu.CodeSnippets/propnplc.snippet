@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>声明PLC带修改通知属性</Title>
+            <Shortcut>propnplc</Shortcut>
+            <Description>声明PLC带修改通知属性</Description>
+            <Author>Wu</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+		<Snippet>
+			<!--<Imports>
+				<Import>
+					<Namespace>
+						System.Windows.Data
+					</Namespace>
+				</Import>
+			</Imports>-->
+			<Declarations>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Property Type</ToolTip>
+					<Default>int</Default>
+				</Literal>
+
+				<Literal>
+					<ID>Property</ID>
+					<ToolTip>Property Name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+
+				<Literal>
+					<ID>Property2</ID>
+					<ToolTip>Property Name</ToolTip>
+					<Default>MyProperty2</Default>
+				</Literal>
+				
+				<Literal>
+					<ID>definity</ID>
+					<ToolTip>definity</ToolTip>
+					<Default>definity</Default>
+				</Literal>
+
+				<Literal>
+					<ID>ownerclass</ID>
+					<ToolTip>The owning class of this Property.  Typically the class that it is declared in.</ToolTip>
+					<Default>ownerclass</Default>
+				</Literal>
+				<Literal>
+					<ID>defaultvalue</ID>
+					<ToolTip>The default value for this property.</ToolTip>
+					<Default>0</Default>
+				</Literal>
+			</Declarations>
+
+			
+			
+			
+			<Code Language="csharp">
+				<![CDATA[
+private $type$ _$Property$;
+public $type$ $Property$ { get { return _$Property$; } set { _$Property$ = value; Notify("$Property$"); Notify("$Property2$"); } }
+/// <summary>
+/// $definity$
+/// </summary>
+public $type$ $Property2$ { get { return $Property$; } }
+$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
