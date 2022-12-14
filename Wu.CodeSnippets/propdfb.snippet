@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>声明依赖属性带回调函数</Title>
+            <Shortcut>propdfb</Shortcut>
+            <Description>声明依赖属性带回调函数</Description>
+            <Author>Wu</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+			<Imports>
+				<Import>
+					<Namespace>
+						System
+					</Namespace>
+				</Import>
+				<Import>
+					<Namespace>
+						System.ComponentModel
+					</Namespace>
+				</Import>
+				<Import>
+					<Namespace>
+						System.Windows
+					</Namespace>
+				</Import>
+			</Imports>
+            <Declarations>
+				<!--标签-->
+				<Literal>
+					<ID>category</ID>
+					<ToolTip>category</ToolTip>
+					<Default>category</Default>
+				</Literal>
+                <!--说明-->
+				<Literal>
+					<ID>description</ID>
+					<ToolTip>description</ToolTip>
+					<Default>description</Default>
+				</Literal>
+				<!--数据类型-->
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>Property Type</ToolTip>
+                    <Default>int</Default>
+                </Literal>
+				<!--属性名-->
+                <Literal>
+                    <ID>property</ID>
+                    <ToolTip>Property Name</ToolTip>
+                    <Default>MyProperty</Default>
+                </Literal>
+				<!--属性所有者-->
+                <Literal Editable="false">
+                    <ID>ownerclass</ID>
+                    <ToolTip>The owning class of this Property.  Typically the class that it is declared in.</ToolTip>
+					<Function>ClassName()</Function>
+                    <Default>ownerclass</Default>
+                </Literal>
+				<!--默认值-->
+                <Literal>
+                    <ID>defaultvalue</ID>
+                    <ToolTip>The default value for this property.</ToolTip>
+                    <Default>defaultValue</Default>
+                </Literal>
+				
+            </Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+[Category("Property")]
+[Description("$description$")]
+public $type$ $property$
+{
+    get { return ($type$)GetValue($property$Property); }
+    set { SetValue($property$Property, value); }
+}
+public static readonly DependencyProperty $property$Property = 
+            DependencyProperty.Register("$property$", typeof($type$), typeof($ownerclass$), 
+                new FrameworkPropertyMetadata(default($type$), FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender,
+                    new PropertyChangedCallback(On$property$Changed)));
+
+private static void On$property$Changed(DependencyObject d, DependencyPropertyChangedEventArgs e)
+{
+    throw new NotImplementedException();
+}
+
+$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>

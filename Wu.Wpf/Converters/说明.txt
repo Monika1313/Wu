@@ -1,0 +1,11 @@
+﻿
+
+
+CnYesNo2Bool	中文 "是" "否" 转换为Bool
+False2Collapsed false隐藏  false=Collapsed
+MergeText		文本合并
+NonZero2Collapsed	不为0隐藏
+ReverseBool	bool取反
+StringIsWhiteOrSpace2Bool	null隐藏
+True2Collapsed	true隐藏
+Zero2Collapsed	为0隐藏

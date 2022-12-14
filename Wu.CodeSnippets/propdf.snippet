@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+    <CodeSnippet Format="1.0.0">
+        <Header>
+            <Title>声明依赖属性</Title>
+            <Shortcut>propdf</Shortcut>
+            <Description>Code snippet for a property using DependencyProperty as the backing store</Description>
+            <Author>Wu</Author>
+            <SnippetTypes>
+                <SnippetType>Expansion</SnippetType>
+            </SnippetTypes>
+        </Header>
+        <Snippet>
+			<Imports>
+				<Import>
+					<Namespace>
+						System.ComponentModel
+					</Namespace>
+				</Import>
+				<Import>
+					<Namespace>
+						System.Windows
+					</Namespace>
+				</Import>
+			</Imports>
+            <Declarations>
+				<Literal>
+					<ID>description</ID>
+					<ToolTip>description</ToolTip>
+					<Default>注释说明</Default>
+				</Literal>
+                <Literal>
+                    <ID>type</ID>
+                    <ToolTip>Property Type</ToolTip>
+                    <Default>int</Default>
+                </Literal>
+                <Literal>
+                    <ID>property</ID>
+                    <ToolTip>Property Name</ToolTip>
+                    <Default>MyProperty</Default>
+                </Literal>
+                <Literal Editable="false">
+                    <ID>ownerclass</ID>
+                    <ToolTip>The owning class of this Property.  Typically the class that it is declared in.</ToolTip>
+					<Function>ClassName()</Function>
+                    <Default>ownerclass</Default>
+                </Literal>
+                <!--<Literal>
+                    <ID>defaultvalue</ID>
+                    <ToolTip>The default value for this property.</ToolTip>
+                    <Default>0</Default>
+                </Literal>-->
+            </Declarations>
+            <Code Language="csharp">
+                <![CDATA[
+[Category("Property")]
+[Description("$description$")]
+public $type$ $property$
+{
+    get { return ($type$)GetValue($property$Property); }
+    set { SetValue($property$Property, value); }
+}
+public static readonly DependencyProperty $property$Property = 
+            DependencyProperty.Register("$property$", typeof($type$), typeof($ownerclass$), 
+			    new FrameworkPropertyMetadata(default($type$), FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
+
+$end$]]>
+            </Code>
+        </Snippet>
+    </CodeSnippet>
+</CodeSnippets>
