@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Wu.Wpf.Converters
 {
@@ -18,7 +14,7 @@ namespace Wu.Wpf.Converters
                 return null;
             if (value is string)
             {
-                if(value.Equals("是"))
+                if (value.Equals("是"))
                     return true;
             }
             return false;

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Globalization;
-using System.Windows.Data;
-using System.Windows.Media;
-
-namespace Wu.Wpf.Converters
-{ 
+﻿namespace Wu.Wpf.Converters
+{
     //public class ColorToBrushConverter : IValueConverter
     //{
     //    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

@@ -11,7 +11,7 @@ namespace Wu.ViewModels
     /// <summary>
     /// 窗口导航类
     /// </summary>
-    public class NavigationViewModel : BindableBase,INavigationAware
+    public class NavigationViewModel : BindableBase, INavigationAware
     {
         private readonly IContainerProvider provider;
         public readonly IEventAggregator aggregator;//事件聚合器
@@ -36,12 +36,12 @@ namespace Wu.ViewModels
 
         public virtual void OnNavigatedFrom(NavigationContext navigationContext)
         {
-            
+
         }
 
         public virtual void OnNavigatedTo(NavigationContext navigationContext)
         {
-            
+
         }
 
         /// <summary>
