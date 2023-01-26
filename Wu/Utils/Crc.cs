@@ -1,4 +1,6 @@
-﻿namespace Wu.Utils
+﻿using System;
+
+namespace Wu.Utils
 {
     /// <summary>
     /// CRC校验
