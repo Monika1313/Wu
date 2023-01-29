@@ -2,7 +2,7 @@
 ## Wu.Extensions
 包含一些String、DateTime等的扩展方法
 ## Wu.Utils
-包含一Crc校验等
+包含Crc校验等
 
 
 ## Wu.Wpf
