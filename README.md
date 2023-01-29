@@ -7,7 +7,8 @@
 
 # Wu.Wpf
 ## Wu.Wpf.Converters
-包含一些转换器
+- ReverseBool:反转Bool
+- False2Collapsed: False转换Collapsed
 
 
 # Wu.CodeSnippets
