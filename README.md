@@ -21,6 +21,15 @@
 |EnumDescriptionTypeConverter|使枚举支持绑定Description列表|
 |MergeText|合并多段文本|
 
+
+## Wu.Wpf.Extensions
+扩展方法
+|名称|功能|
+|-|-|
+|PasswordExtensions|使Password支持绑定|
+|ScrollViewerExtensions|使ScrollViewer自动移动到最下方|
+|TextBoxExtensions|使TextBox支持获取焦点时全选|
+
 ## Wu.Wpf.Common
 Wu.Wpf.Common.Utils
 |名称|功能|
