@@ -18,7 +18,8 @@
 |NonZero2Collapsed|非零转换Collapsed|
 |StringIsNullOrWhiteSpace2Collapsed|空字符转换Collapsed|
 |StringIsNullOrWhiteSpace2True|空字符转换True|
-|EnumDescriptionTypeConverter|使枚举支持绑定Description列表|
+|EnumDescriptionTypeConverter|使枚举绑定值改为Description|
+|EnumBindingSourceExtension|使枚举支持绑定|
 |MergeText|合并多段文本|
 
 
