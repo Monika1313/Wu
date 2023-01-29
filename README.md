@@ -41,5 +41,21 @@ Wu.Wpf.Common.Utils
 # Wu.CodeSnippets
 包含一些CodeSnippet代码段
 
+|名称|功能|
+|-|-|
+|bindablebase|继承Prism.Mvvm.BindableBase基类|
+|propr|声明带属性通知的属性|
+|propdf|声明依赖属性|
+|propdfb|声明依赖属性带回调|
+|realizeINotifyPropertyChanged|继承并实现INotifyPropertyChanged接口|
+
+
+
+
+
+
+
+
+
 
 
