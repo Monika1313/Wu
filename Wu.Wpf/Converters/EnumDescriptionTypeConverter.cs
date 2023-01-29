@@ -6,7 +6,7 @@ using System.Reflection;
 namespace Wu.Wpf.Converters
 {
     /// <summary>
-    /// 枚举类型添加该特性[TypeConverter(typeof(EnumDescriptionTypeConverter))]    可绑定Description列表
+    /// 枚举类型添加该特性[TypeConverter(typeof(EnumDescriptionTypeConverter))]    使枚举绑定值改为Description
     /// </summary>
     public class EnumDescriptionTypeConverter : EnumConverter
     {

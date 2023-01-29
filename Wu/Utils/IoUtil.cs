@@ -10,7 +10,7 @@ namespace Wu.Utils
     /// <summary>
     /// IO操作
     /// </summary>
-    public class IOUtil
+    public class IoUtil
     {
         ///// <summary>
         ///// 根据文件路径返回文件夹目录
