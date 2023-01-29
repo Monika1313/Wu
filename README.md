@@ -7,7 +7,8 @@
 
 # Wu.Wpf
 ## Wu.Wpf.Converters
-|名称|功能
+转换器
+|名称|功能|
 |-|-|
 |ValueConverterBase|转换器基类|
 |ReverseBool|反转Bool|
@@ -17,7 +18,16 @@
 |NonZero2Collapsed|非零转换Collapsed|
 |StringIsNullOrWhiteSpace2Collapsed|空字符转换Collapsed|
 |StringIsNullOrWhiteSpace2True|空字符转换True|
+|EnumDescriptionTypeConverter|使枚举支持绑定Description列表|
+|MergeText|合并多段文本|
 
+## Wu.Wpf.Common
+Wu.Wpf.Common.Utils
+|名称|功能|
+|-|-|
+|IsUIThread|判断是否为UI线程|
+|ExecuteFun|在UI线程执行方法|
+|ExecuteFunBeginInvoke|在UI线程执行方法|
 
 # Wu.CodeSnippets
 包含一些CodeSnippet代码段
