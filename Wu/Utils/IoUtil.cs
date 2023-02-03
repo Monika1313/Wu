@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace Wu.Utils
     /// <summary>
     /// IO操作
     /// </summary>
-    public class IOUtil
+    public class IoUtil
     {
         ///// <summary>
         ///// 根据文件路径返回文件夹目录

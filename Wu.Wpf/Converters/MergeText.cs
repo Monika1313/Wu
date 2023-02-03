@@ -10,7 +10,7 @@ namespace Wu.Wpf.Converters
     {
         public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
         {
-            if(values == null || values.Length == 0)
+            if (values == null || values.Length == 0)
             {
                 return string.Empty;
             }

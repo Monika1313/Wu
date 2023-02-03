@@ -1,12 +1,9 @@
-﻿using Wu.Wpf.Common;
-using Wu.Wpf.Events;
-using Prism.Events;
+﻿using Prism.Events;
 using Prism.Services.Dialogs;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using Wu.Wpf.Common;
+using Wu.Wpf.Events;
 
 namespace Wu.Wpf.Extensions
 {

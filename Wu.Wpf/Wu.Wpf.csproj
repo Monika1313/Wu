@@ -1,20 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Authors>Monika1313</Authors>
-    <Description>Wu.Wpf类库</Description>
-    <Version>1.0.4</Version>
-    <Title>Wu.Wpf</Title>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net48;net6.0-windows;net7.0-windows</TargetFrameworks>
+		<LangVersion>10.0</LangVersion>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Authors>Monika1313</Authors>
+		<Description>Wu.Wpf类库</Description>
+		<Version>1.0.6</Version>
+		<Title>Wu.Wpf</Title>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
-    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
-    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+		<PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+	</ItemGroup>
 
 </Project>

@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 
 namespace Wu.Wpf.Extensions
 {
     /// <summary>
     /// 当 TextBoxBase获得焦点的时候，自动全部选择文字。附加属性为SelectAllWhenGotFocus，类型为bool, true为生效 false不生效
-    /// 用法添加引用 xmlns:wuext="clr-namespace:Wu.Wpf.Extensions;assembly=Wu.Wpf"
+    /// 用法 添加引用 xmlns:wuext="clr-namespace:Wu.Wpf.Extensions;assembly=Wu.Wpf"
     /// 在TextBox内添加属性 <TextBox wuext:TextBoxExtensions.SelectAllWhenGotFocus="True"/>
     /// </summary>
     public class TextBoxExtensions
@@ -48,6 +43,7 @@ namespace Wu.Wpf.Extensions
                 }
             }
         }
+
         private static void TextBoxOnGotFocus(object sender, RoutedEventArgs e)
         {
             if (sender is TextBoxBase tBox)
@@ -57,6 +53,7 @@ namespace Wu.Wpf.Extensions
             }
 
         }
+
         private static void TextBoxPreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             if (sender is TextBoxBase tBox)
