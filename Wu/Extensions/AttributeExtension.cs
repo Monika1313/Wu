@@ -3,7 +3,6 @@ using System.ComponentModel;
 using System.Reflection;
 using System.Linq;
 using System;
-using System.Collections.Generic;
 
 namespace Wu.Extensions
 {
@@ -78,45 +77,8 @@ namespace Wu.Extensions
                 disp = (TypeDescriptor.GetProperties(modelType)[propertyDisplayName]?.Attributes[typeof(DisplayNameAttribute)] as DisplayNameAttribute)?.DisplayName ?? string.Empty;
             }
             return disp;
-        }
+        } 
         #endregion
 
-
-
-        ///// <summary>
-        ///// 动态获取 DisplayName和Display(Name='')
-        ///// </summary>
-        ///// <typeparam name="T"></typeparam>
-        ///// <param name="t"></param>
-        ///// <returns></returns>
-        //public static List<Dictionary<string, string>> GetClassDisplayNameDict<T>(T t)
-        //{
-        //    List<Dictionary<string, string>> dicList = new List<Dictionary<string, string>>();
-        //    Dictionary<string, string> dic;
-        //    Type type = t.GetType();
-        //    PropertyInfo[] ProInfo = type.GetProperties();
-        //    foreach (var item in ProInfo)
-        //    {
-        //        if (dicList.Count > 0)
-        //        {
-        //            //获取Display(Name='')
-        //            dic = new Dictionary<string, string>();
-        //            var attribute = type.GetProperty(item.Name);
-        //            var displayName = attribute.GetCustomAttribute<DisplayAttribute>();
-        //            dic.Add(item.Name, displayName.Name);
-        //            dicList.Add(dic);
-        //        }
-        //        else
-        //        {
-        //            //获取 DisplayName
-        //            dic = new Dictionary<string, string>();
-        //            var attribute = type.GetProperty(item.Name);
-        //            var displayName = attribute.GetCustomAttribute<DisplayNameAttribute>();
-        //            dic.Add(item.Name, displayName.DisplayName);
-        //            dicList.Add(dic);
-        //        }
-        //    }
-        //    return dicList;
-        //}
     }
 }
