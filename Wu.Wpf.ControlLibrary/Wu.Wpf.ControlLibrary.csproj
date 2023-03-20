@@ -5,6 +5,11 @@
 		<LangVersion>latestMajor</LangVersion>
 		<Nullable>enable</Nullable>
 		<UseWPF>true</UseWPF>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<Title>Wu.Wpf.ControlLibrary</Title>
+		<Version>1.0.0</Version>
+		<Authors>Monika1313</Authors>
+		<Description>Wpf用户控件库</Description>
 	</PropertyGroup>
 
 </Project>
