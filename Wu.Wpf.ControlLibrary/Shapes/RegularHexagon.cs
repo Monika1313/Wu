@@ -40,9 +40,8 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                     AbsOrigin = new Point(Origin.X * ActualWidth, Origin.Y * ActualHeight);
                 else
                     AbsOrigin = new Point(Origin.X, Origin.Y);
-                double ctrlLength = Math.Min(ActualHeight, ActualWidth) / 2; //控件宽高的一半
-                //double ctrlLength = Math.Min(ActualHeight, ActualWidth) / 2; //控件宽高的一半
-                double len = ctrlLength * SizeRatio;                           //多边形两顶点最长值的一半
+                double ctrlLength = Math.Min(ActualHeight, ActualWidth) / 2;    //控件宽高的一半
+                double len = ctrlLength * SizeRatio;                           //多边形中心点到顶点的距离
 
                 Point pCenter = new(0, 0);  //相对定位前的中心
                

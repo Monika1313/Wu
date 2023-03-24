@@ -27,6 +27,8 @@ namespace Wu.Wpf.ControlLibrary.Shapes
 
         protected override Geometry DefiningGeometry => GeometryGenerator();
 
+        private double gh3 = Math.Sqrt(3);//根号3
+
         /// <summary>
         /// 生成图形
         /// </summary>
@@ -42,27 +44,15 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                 else
                     AbsOrigin = new Point(Origin.X, Origin.Y);
                 double ctrlLength = Math.Min(ActualHeight, ActualWidth) / 2; //控件宽高的一半
-                //double ctrlLength = Math.Min(ActualHeight, ActualWidth) / 2; //控件宽高的一半
                 double len = ctrlLength * SizeRatio;                           //多边形两顶点最长值的一半
 
                 Point pCenter = new(0, 0);  //相对定位前的中心
 
-
-                double gh3 = Math.Sqrt(3);
-
-                //计算添加圆角时, 顶点需要的旋转角度
-                //double angle = Math.Atan(gh3 * CornerRadius / (2 * gh3 * len - CornerRadius)) * (180 / Math.PI);
-                //
                 double ratio = Math.Abs(CornerRatio) % 6.0;
                 double angle = 30 * ratio;//
 
-                #region 内切
-                //计算添加导角后的顶点到原点的距离
-                //double length = Math.Sin(60 * Math.PI / 180.0) * len / Math.Sin((120 - angle) * Math.PI / 180.0);
-                //var pStart = new Point(length, 0);//正六边形的绘图起点 
-                #endregion
+                var pStart = new Point(len, 0);//相对定位前的绘图起点
 
-                var pStart = new Point(len, 0);//正六边形的绘图起点
                 #region 坐标点位
                 var p1 = PointRotate(pCenter, pStart, -angle);
                 var p3 = PointRotate(pCenter, p1, 60);
