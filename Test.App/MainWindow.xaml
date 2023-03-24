@@ -43,8 +43,15 @@
 
         <ShapeControls:RegularHexagonCtrl
             Margin="0"
-            CornerRatio="35"
+            CornerRatio="15"
             Fill="#FF63CE79" />
+
+        <Shapes:RegularPolygon
+            Grid.Row="1"
+            Grid.Column="1"
+            CornerRatio="4.6"
+            Sides="8"
+            SizeRatio="0.9" />
 
 
 

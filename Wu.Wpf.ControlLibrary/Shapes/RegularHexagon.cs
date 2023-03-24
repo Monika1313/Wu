@@ -52,7 +52,7 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                 //double angle = Math.Atan(gh3 * CornerRadius / (2 * gh3 * len - CornerRadius)) * (180 / Math.PI);
                 //
                 double ratio = Math.Abs(CornerRatio)%6.0;
-                double angle = 30 * ratio;//
+                double angle = 30 * ratio;//导角的一半
 
                 #region 内切
                 //计算添加导角后的顶点到原点的距离
