@@ -23,12 +23,10 @@
             </Ellipse.Effect>
             <Ellipse.Style>
                 <Style TargetType="Ellipse">
+                    <Setter Property="Fill" Value="{Binding ElementName=self, Path=OffColor}" />
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding ElementName=self, Path=IsBreathing}" Value="True">
                             <Setter Property="Fill" Value="{Binding ElementName=self, Path=OnColor}" />
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding ElementName=self, Path=IsBreathing}" Value="False">
-                            <Setter Property="Fill" Value="{Binding ElementName=self, Path=OffColor}" />
                         </DataTrigger>
                         <DataTrigger Binding="{Binding ElementName=self, Path=IsBreathing}" Value="True">
                             <DataTrigger.EnterActions>

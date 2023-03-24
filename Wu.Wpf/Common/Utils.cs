@@ -43,5 +43,19 @@ namespace Wu.Wpf.Common
             //当前线程为子线程 委托UI线程执行
             else { Application.Current.Dispatcher.BeginInvoke(() => { action(); }); }
         }
+
+
+        /// <summary>
+        /// 计时方法所用的时间
+        /// </summary>
+        /// <param name="action"></param>
+        public static double ElapsedTime(Action action)
+        {
+            System.Diagnostics.Stopwatch sw = new(); 
+            sw.Start();
+            action();
+            sw.Stop();
+            return sw.ElapsedMilliseconds;
+        }
     }
 }
