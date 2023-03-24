@@ -43,18 +43,24 @@
 
         <ShapeControls:RegularHexagonCtrl
             Margin="0"
-            CornerRatio="15"
-            Fill="#FF63CE79" />
+            CornerRatio="5"
+            SizeRatio="1" />
 
         <Shapes:RegularPolygon
             Grid.Row="1"
             Grid.Column="1"
-            CornerRatio="4.6"
-            Sides="8"
+            CornerRatio="25"
+            Sides="10"
             SizeRatio="0.9" />
 
-
-
-
+        <ShapeControls:RegularPolygonCtrl
+            Grid.Row="1"
+            CornerRatio="3.9"
+            Sides="6" />
+        <ShapeControls:RegularPolygonCtrl
+            Grid.Row="1"
+            CornerRatio="3"
+            Rotation="30"
+            Sides="6" />
     </Grid>
 </Window>

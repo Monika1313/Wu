@@ -28,7 +28,6 @@ namespace Wu.Wpf.ControlLibrary.ShapeControls
             SetCurrentValue(FillProperty, Brushes.MediumPurple);
         }
 
-
         [Category("Wu")]
         [Description("填充色")]
         public Brush Fill
@@ -40,7 +39,6 @@ namespace Wu.Wpf.ControlLibrary.ShapeControls
                     DependencyProperty.Register("Fill", typeof(Brush), typeof(RegularHexagonCtrl),
                         new FrameworkPropertyMetadata(Brushes.MediumPurple,
                         FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
-
 
         [Category("Wu")]
         [Description("六边形大小尺寸相对控件大小的比例∈(0,1]")]
@@ -54,7 +52,6 @@ namespace Wu.Wpf.ControlLibrary.ShapeControls
                         new FrameworkPropertyMetadata(0.8,
                         FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
 
-
         [Category("Wu")]
         [Description("导角占图形的大小比例∈[0,1]")]
         public double CornerRatio
@@ -67,8 +64,6 @@ namespace Wu.Wpf.ControlLibrary.ShapeControls
                         new FrameworkPropertyMetadata(default(double),
                         FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
 
-
-
         [Category("Wu")]
         [Description("旋转角度")]
         public double Rotation
@@ -80,9 +75,5 @@ namespace Wu.Wpf.ControlLibrary.ShapeControls
                     DependencyProperty.Register("Rotation", typeof(double), typeof(RegularHexagonCtrl),
                         new FrameworkPropertyMetadata(0.0,
                         FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
-
-
-
-
     }
 }

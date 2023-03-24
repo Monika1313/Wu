@@ -41,23 +41,17 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                 else
                     AbsOrigin = new Point(Origin.X, Origin.Y);
                 double ctrlLength = Math.Min(ActualHeight, ActualWidth) / 2;    //控件宽高的一半
-                double len = ctrlLength * SizeRatio;                           //多边形中心点到顶点的距离
+                double len = ctrlLength * (SizeRatio < 0 ? 0 : SizeRatio > 1 ? 1 : SizeRatio);                           //多边形中心点到顶点的距离
 
                 Point pCenter = new(0, 0);  //相对定位前的中心
-               
-
                 double gh3 = Math.Sqrt(3);
 
-                //计算添加圆角时, 顶点需要的旋转角度
-                //double angle = Math.Atan(gh3 * CornerRadius / (2 * gh3 * len - CornerRadius)) * (180 / Math.PI);
-                //
-                double ratio = Math.Abs(CornerRatio)%6.0;
-                double angle = 30 * ratio;//导角的一半
+                double ratio = Math.Abs(CornerRatio) % 6.0;//导角占比
+                double angle = 30 * ratio;                 //导角的一半
 
                 #region 内切
                 //计算添加导角后的顶点到原点的距离
                 //double length = Math.Sin(60 * Math.PI / 180.0) * len / Math.Sin((120 - angle) * Math.PI / 180.0);
-                //var pStart = new Point(length, 0);//正六边形的绘图起点 
                 #endregion
 
                 var pStart = new Point(len, 0);//正六边形的绘图起点
@@ -125,7 +119,6 @@ namespace Wu.Wpf.ControlLibrary.Shapes
             return new Point(x, y);
         }
 
-
         #region 依赖属性
         [Category("Wu")]
         [Description("正六边形长对角线的一半的比例 ∈(0,1]")]
@@ -138,7 +131,6 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                     DependencyProperty.Register("SizeRatio", typeof(double), typeof(RegularHexagon),
                         new FrameworkPropertyMetadata(0.8,
                         FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
-
 
         [Category("Wu")]
         [Description("导角占图形的大小比例 [0,1]")]
@@ -188,6 +180,5 @@ namespace Wu.Wpf.ControlLibrary.Shapes
         /// </summary>
         public bool IsRelativeOrigin => Math.Abs(Origin.X) <= 1 && Math.Abs(Origin.Y) <= 1;
         #endregion
-
     }
 }
