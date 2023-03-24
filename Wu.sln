@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wu.EntityFrameworkCore", "W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wu.Wpf.ControlLibrary", "Wu.Wpf.ControlLibrary\Wu.Wpf.ControlLibrary.csproj", "{83189964-63FB-41F1-92C0-8B72A1922CAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wu.CodeSnippets", "Wu.CodeSnippets\Wu.CodeSnippets.csproj", "{E70C0CC3-9366-4CE2-8C37-99F3472F6954}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wu.CodeSnippets", "Wu.CodeSnippets\Wu.CodeSnippets.csproj", "{E70C0CC3-9366-4CE2-8C37-99F3472F6954}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{87AD1482-58F6-4810-B538-25C4DC14E9C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.App", "Test.App\Test.App.csproj", "{463425B4-403A-4C7A-8D28-1AE4CC6D95B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,9 +43,16 @@ Global
 		{E70C0CC3-9366-4CE2-8C37-99F3472F6954}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E70C0CC3-9366-4CE2-8C37-99F3472F6954}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E70C0CC3-9366-4CE2-8C37-99F3472F6954}.Release|Any CPU.Build.0 = Release|Any CPU
+		{463425B4-403A-4C7A-8D28-1AE4CC6D95B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{463425B4-403A-4C7A-8D28-1AE4CC6D95B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{463425B4-403A-4C7A-8D28-1AE4CC6D95B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{463425B4-403A-4C7A-8D28-1AE4CC6D95B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{463425B4-403A-4C7A-8D28-1AE4CC6D95B2} = {87AD1482-58F6-4810-B538-25C4DC14E9C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3282ACD3-1C80-45F1-BE8C-E322909BBDBD}
