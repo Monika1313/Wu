@@ -143,19 +143,6 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                         new FrameworkPropertyMetadata(default(double),
                         FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
 
-
-        [Category("Wu")]
-        [Description("旋转角度")]
-        public double Rotation
-        {
-            get { return (double)GetValue(RotationProperty); }
-            set { SetValue(RotationProperty, value); }
-        }
-        public static readonly DependencyProperty RotationProperty =
-                    DependencyProperty.Register("Rotation", typeof(double), typeof(RegularHexagon),
-                        new FrameworkPropertyMetadata(0.0,
-                        FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
-
         [Category("Wu")]
         [Description("中心")]
         public Point Origin
