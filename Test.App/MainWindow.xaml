@@ -49,14 +49,16 @@
         <Shapes:RegularPolygon
             Grid.Row="1"
             Grid.Column="1"
+            CornerRatio="1"
             Fill="#FFCFFE7C"
-            SizeRatio="1" CornerRatio="1" />
-        
+            SizeRatio="1" />
+
         <Shapes:RegularPolygon
             Grid.Row="1"
             Grid.Column="1"
-            SizeRatio="1" Sides="5" />
-        
+            Sides="5"
+            SizeRatio="1" />
+
 
         <ShapeControls:RegularPolygonCtrl
             Grid.Row="1"

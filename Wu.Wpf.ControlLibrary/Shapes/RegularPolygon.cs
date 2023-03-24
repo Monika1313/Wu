@@ -48,7 +48,7 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                 #endregion
 
                 var side = Sides > 2 ? Sides : 3;                        //多边形边数 至少3条边
-                var pStart = new Point(len + AbsOrigin.X, AbsOrigin.Y);//绘图起点在X轴上
+                var pStart = new Point(AbsOrigin.X,-len + AbsOrigin.Y);//绘图起点在X轴上
                 var peakAng = 360.0 / side;                            //多边形两顶点与原点的角度 
                 double ratio = Math.Abs(CornerRatio) % side;                //导角的占比∈[0,边数]
                 double angle = peakAng * ratio / 2;                         //导角角度的一半
@@ -68,7 +68,7 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                 }
                 #endregion
 
-                double cR = (points[0].Y - points[1].Y) / 2 / Math.Sin(peakAng / 2 * Math.PI / 180);//导角圆的半径
+                double cR = (Math.Abs(points[1].X - points[0].X)) / 2 / Math.Sin(peakAng / 2 * Math.PI / 180);//导角圆的半径
                 Size size = new(cR, cR);                                                                   //导角圆的尺寸
 
                 #region 绘图
