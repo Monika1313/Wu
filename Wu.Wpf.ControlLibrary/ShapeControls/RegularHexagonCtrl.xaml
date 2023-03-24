@@ -6,10 +6,19 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Wu.Wpf.ControlLibrary.ShapeControls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
+    Name="self"
     mc:Ignorable="d">
     <Viewbox>
-        <Shapes:RegularHexagon />
+        <Shapes:RegularHexagon
+            CornerRadius="6"
+            Fill="{Binding ElementName=self, Path=Fill}"
+            Length="0.8">
+            <Shapes:RegularHexagon.RenderTransform>
+                <RotateTransform Angle="90" />
+            </Shapes:RegularHexagon.RenderTransform>
+            <Shapes:RegularHexagon.RenderTransformOrigin>
+                <Point X="0.5" Y="0.5" />
+            </Shapes:RegularHexagon.RenderTransformOrigin>
+        </Shapes:RegularHexagon>
     </Viewbox>
 </UserControl>

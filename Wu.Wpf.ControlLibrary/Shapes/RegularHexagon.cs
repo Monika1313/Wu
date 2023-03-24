@@ -20,8 +20,8 @@ namespace Wu.Wpf.ControlLibrary.Shapes
         {
             SetCurrentValue(FillProperty, Brushes.MediumPurple);
             SetCurrentValue(StrokeThicknessProperty, 0d);
-            SetCurrentValue(MinWidthProperty, 100d);
-            SetCurrentValue(MinHeightProperty, 100d);
+            SetCurrentValue(WidthProperty, 100d);
+            SetCurrentValue(HeightProperty, 100d);
         }
 
         protected override Geometry DefiningGeometry => GeometryGenerator();

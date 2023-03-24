@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,5 +25,21 @@ namespace Wu.Wpf.ControlLibrary.ShapeControls
         {
             InitializeComponent();
         }
+
+
+        [Category("Wu")]
+        [Description("填充色")]
+        public Brush Fill
+        {
+            get { return (Brush)GetValue(FillProperty); }
+            set { SetValue(FillProperty, value); }
+        }
+        public static readonly DependencyProperty FillProperty =
+                    DependencyProperty.Register("Fill", typeof(Brush), typeof(RegularHexagonCtrl),
+                        new FrameworkPropertyMetadata(default(Brush),
+                        FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
+
+
+
     }
 }
