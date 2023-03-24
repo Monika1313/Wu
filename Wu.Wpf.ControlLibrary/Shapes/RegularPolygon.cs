@@ -43,18 +43,18 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                     AbsOrigin = new Point(Origin.X * ActualWidth, Origin.Y * ActualHeight);
                 else
                     AbsOrigin = new Point(Origin.X, Origin.Y);
-                double ctrlLength = Math.Min(ActualHeight, ActualWidth) / 2; //控件宽高的一半
+                double ctrlLength = Math.Min(ActualHeight, ActualWidth) / 2;                  //控件宽高的一半
                 double len = ctrlLength * (SizeRatio < 0 ? 0 : SizeRatio > 1 ? 1 : SizeRatio);//多边形中心到顶点的距离
-                //Point pCenter = new(0, 0);  //相对定位前的中心
                 #endregion
 
-                var side = Sides > 2 ? Sides : 3;//多边形边数 至少3条边
-                var pStart = new Point(len + AbsOrigin.X, AbsOrigin.Y);//相对定位前的绘图起点在Y轴上
-                var peakAng = 360.0 / side;            //多边形两顶点与原点的角度 
-                double ratio = Math.Abs(CornerRatio) % side; //导角的占比∈[0,边数]
-                double angle = peakAng * ratio / 2;          //导角角度的一半
+                var side = Sides > 2 ? Sides : 3;                        //多边形边数 至少3条边
+                var pStart = new Point(len + AbsOrigin.X, AbsOrigin.Y);//绘图起点在X轴上
+                var peakAng = 360.0 / side;                            //多边形两顶点与原点的角度 
+                double ratio = Math.Abs(CornerRatio) % side;                //导角的占比∈[0,边数]
+                double angle = peakAng * ratio / 2;                         //导角角度的一半
 
                 #region 点位生成
+                //先定义第一个顶点导角后的两个点位
                 List<Point> points = new()
                 {
                     PointRotate(AbsOrigin, pStart, -angle), //第一点 第一个顶点的导角左边
@@ -64,7 +64,7 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                 //从第三点开始补点位
                 for (int i = 3; i <= side * 2; i++)
                 {
-                    points.Add(PointRotate(AbsOrigin, points[points.Count - 2], peakAng));
+                    points.Add(PointRotate(AbsOrigin, points[points.Count-2], peakAng));//下一个点相对前前个点旋转获得
                 }
                 #endregion
 
@@ -72,6 +72,7 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                 Size size = new(cR, cR);                                                                   //导角圆的尺寸
 
                 #region 绘图
+                //绘制起点
                 geo.BeginFigure(points[0], true, true);
 
                 for (int i = 1; i < points.Count; i++)
