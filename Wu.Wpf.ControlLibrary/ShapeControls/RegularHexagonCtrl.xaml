@@ -10,11 +10,13 @@
     mc:Ignorable="d">
     <Viewbox>
         <Shapes:RegularHexagon
-            CornerRadius="6"
+            Width="100"
+            Height="100"
+            CornerRatio="{Binding ElementName=self, Path=CornerRatio}"
             Fill="{Binding ElementName=self, Path=Fill}"
-            Length="0.8">
+            SizeRatio="{Binding ElementName=self, Path=SizeRatio}">
             <Shapes:RegularHexagon.RenderTransform>
-                <RotateTransform Angle="90" />
+                <RotateTransform Angle="{Binding ElementName=self, Path=Rotation}" />
             </Shapes:RegularHexagon.RenderTransform>
             <Shapes:RegularHexagon.RenderTransformOrigin>
                 <Point X="0.5" Y="0.5" />

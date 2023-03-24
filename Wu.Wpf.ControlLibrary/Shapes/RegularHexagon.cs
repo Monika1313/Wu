@@ -20,8 +20,8 @@ namespace Wu.Wpf.ControlLibrary.Shapes
         {
             SetCurrentValue(FillProperty, Brushes.MediumPurple);
             SetCurrentValue(StrokeThicknessProperty, 0d);
-            SetCurrentValue(WidthProperty, 100d);
-            SetCurrentValue(HeightProperty, 100d);
+            SetCurrentValue(MinWidthProperty, 100d);
+            SetCurrentValue(MinHeightProperty, 100d);
         }
 
         protected override Geometry DefiningGeometry => GeometryGenerator();
@@ -41,7 +41,7 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                 else
                     AbsOrigin = new Point(Origin.X, Origin.Y);
                 double ctrlLength = Math.Min(ActualHeight, ActualWidth) / 2; //控件宽高的一半
-                double len = ctrlLength * Length;                           //多边形两顶点最长值的一半
+                double len = ctrlLength * SizeRatio;                           //多边形两顶点最长值的一半
 
                 Point pCenter = new(0, 0);  //相对定位前的中心
                 var pStart = new Point(len, 0);//正六边形的绘图起点
@@ -50,7 +50,7 @@ namespace Wu.Wpf.ControlLibrary.Shapes
 
                 //计算添加圆角时, 顶点需要的旋转角度
                 //double angle = Math.Atan(gh3 * CornerRadius / (2 * gh3 * len - CornerRadius)) * (180 / Math.PI);
-                double angle = 60 * CornerRadius;
+                double angle = 60 * CornerRatio;
 
                 #region 坐标点位
                 var p1 = PointRotate(pCenter, pStart, -angle / 2);
@@ -118,31 +118,31 @@ namespace Wu.Wpf.ControlLibrary.Shapes
 
 
         #region 依赖属性
-
         [Category("Wu")]
         [Description("正六边形长对角线的一半的比例 ∈(0,1]")]
-        public double Length
+        public double SizeRatio
         {
-            get { return (double)GetValue(LengthProperty); }
-            set { SetValue(LengthProperty, value); }
+            get { return (double)GetValue(SizeRatioProperty); }
+            set { SetValue(SizeRatioProperty, value); }
         }
-        public static readonly DependencyProperty LengthProperty =
-                    DependencyProperty.Register("Length", typeof(double), typeof(RegularHexagon),
-                        new FrameworkPropertyMetadata(0.5,
+        public static readonly DependencyProperty SizeRatioProperty =
+                    DependencyProperty.Register("SizeRatio", typeof(double), typeof(RegularHexagon),
+                        new FrameworkPropertyMetadata(0.8,
                         FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
 
 
         [Category("Wu")]
-        [Description("圆角比例 (0,1]")]
-        public double CornerRadius
+        [Description("导角占图形的大小比例 [0,1]")]
+        public double CornerRatio
         {
-            get { return (double)GetValue(CornerRadiusProperty); }
-            set { SetValue(CornerRadiusProperty, value); }
+            get { return (double)GetValue(CornerRatioProperty); }
+            set { SetValue(CornerRatioProperty, value); }
         }
-        public static readonly DependencyProperty CornerRadiusProperty =
-                    DependencyProperty.Register("CornerRadius", typeof(double), typeof(RegularHexagon),
-                        new FrameworkPropertyMetadata(0.1,
+        public static readonly DependencyProperty CornerRatioProperty =
+                    DependencyProperty.Register("CornerRatio", typeof(double), typeof(RegularHexagon),
+                        new FrameworkPropertyMetadata(default(double),
                         FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender));
+
 
         [Category("Wu")]
         [Description("旋转角度")]

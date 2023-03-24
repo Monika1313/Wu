@@ -12,8 +12,24 @@
     Height="600"
     mc:Ignorable="d">
     <Grid>
-        <!--<Shapes:RegularHexagon Margin="0" Length="0.7" />
-        <Shapes:RegularHexagon Margin="0" Length="0.7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*" />
+            <RowDefinition Height="6*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*" />
+            <ColumnDefinition Width="41*" />
+        </Grid.ColumnDefinitions>
+
+        <Shapes:RegularHexagon
+            Grid.Column="1"
+            CornerRatio="0.2"
+            SizeRatio="0.7" />
+        <Shapes:RegularHexagon
+            Grid.Column="1"
+            Margin="0"
+            CornerRatio="0.2"
+            SizeRatio="0.7">
             <Shapes:RegularHexagon.RenderTransform>
                 <TransformGroup>
                     <RotateTransform Angle="90" />
@@ -22,14 +38,16 @@
             <Shapes:RegularHexagon.RenderTransformOrigin>
                 <Point X="0.5" Y="0.5" />
             </Shapes:RegularHexagon.RenderTransformOrigin>
-        </Shapes:RegularHexagon>-->
-
+        </Shapes:RegularHexagon>
 
 
         <ShapeControls:RegularHexagonCtrl
-            Margin="0,0,0,0"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top" />
+            Margin="0"
+            CornerRatio="3.8"
+            Fill="#FF63CE79"
+            Rotation="647"
+            SizeRatio="0.9" />
+
 
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Wu.Wpf.ControlLibrary.Shapes
 {
-    internal class RegularPolygon
+    public class RegularPolygon
     {
     }
 }
