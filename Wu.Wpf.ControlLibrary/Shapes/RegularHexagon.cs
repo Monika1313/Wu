@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Wu.Wpf.ControlLibrary.Shapes
 {
     /// <summary>
-    /// 正六边形
+    /// 正六边形 基础图形
     /// </summary>
     public class RegularHexagon : Shape
     {
@@ -41,25 +41,35 @@ namespace Wu.Wpf.ControlLibrary.Shapes
                 else
                     AbsOrigin = new Point(Origin.X, Origin.Y);
                 double ctrlLength = Math.Min(ActualHeight, ActualWidth) / 2; //控件宽高的一半
+                //double ctrlLength = Math.Min(ActualHeight, ActualWidth) / 2; //控件宽高的一半
                 double len = ctrlLength * SizeRatio;                           //多边形两顶点最长值的一半
 
                 Point pCenter = new(0, 0);  //相对定位前的中心
-                var pStart = new Point(len, 0);//正六边形的绘图起点
+               
 
                 double gh3 = Math.Sqrt(3);
 
                 //计算添加圆角时, 顶点需要的旋转角度
                 //double angle = Math.Atan(gh3 * CornerRadius / (2 * gh3 * len - CornerRadius)) * (180 / Math.PI);
-                double angle = 60 * CornerRatio;
+                //
+                double ratio = Math.Abs(CornerRatio)%6.0;
+                double angle = 30 * ratio;//
 
+                #region 内切
+                //计算添加导角后的顶点到原点的距离
+                //double length = Math.Sin(60 * Math.PI / 180.0) * len / Math.Sin((120 - angle) * Math.PI / 180.0);
+                //var pStart = new Point(length, 0);//正六边形的绘图起点 
+                #endregion
+
+                var pStart = new Point(len, 0);//正六边形的绘图起点
                 #region 坐标点位
-                var p1 = PointRotate(pCenter, pStart, -angle / 2);
+                var p1 = PointRotate(pCenter, pStart, -angle);
                 var p3 = PointRotate(pCenter, p1, 60);
                 var p5 = PointRotate(pCenter, p3, 60);
                 var p7 = PointRotate(pCenter, p5, 60);
                 var p9 = PointRotate(pCenter, p7, 60);
                 var p11 = PointRotate(pCenter, p9, 60);
-                var p2 = PointRotate(pCenter, pStart, angle / 2);
+                var p2 = PointRotate(pCenter, pStart, angle);
                 var p4 = PointRotate(pCenter, p2, 60);
                 var p6 = PointRotate(pCenter, p4, 60);
                 var p8 = PointRotate(pCenter, p6, 60);
@@ -165,13 +175,9 @@ namespace Wu.Wpf.ControlLibrary.Shapes
             if (d is RegularHexagon self)
             {
                 if (self.IsRelativeOrigin)
-                {
                     self.AbsOrigin = new Point(self.Origin.X * self.ActualWidth, self.Origin.Y * self.ActualHeight);
-                }
                 else
-                {
                     self.AbsOrigin = new Point(self.Origin.X, self.Origin.Y);
-                }
             }
         }
 

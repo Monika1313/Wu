@@ -43,10 +43,8 @@
 
         <ShapeControls:RegularHexagonCtrl
             Margin="0"
-            CornerRatio="3.8"
-            Fill="#FF63CE79"
-            Rotation="647"
-            SizeRatio="0.9" />
+            CornerRatio="35"
+            Fill="#FF63CE79" />
 
 
 

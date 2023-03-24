@@ -43,7 +43,7 @@ namespace Wu.Wpf.ControlLibrary.ShapeControls
 
 
         [Category("Wu")]
-        [Description("六边形大小尺寸相对控件大小的比例 (0,1]")]
+        [Description("六边形大小尺寸相对控件大小的比例∈(0,1]")]
         public double SizeRatio
         {
             get { return (double)GetValue(SizeRatioProperty); }
@@ -56,7 +56,7 @@ namespace Wu.Wpf.ControlLibrary.ShapeControls
 
 
         [Category("Wu")]
-        [Description("导角占图形的大小比例 [0,1]")]
+        [Description("导角占图形的大小比例∈[0,1]")]
         public double CornerRatio
         {
             get { return (double)GetValue(CornerRatioProperty); }
