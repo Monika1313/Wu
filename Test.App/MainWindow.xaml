@@ -70,9 +70,8 @@
         <ControlLibrary:RingText
             Grid.Row="1"
             Grid.Column="1"
-            CenterTo="-135"
-            FontSize="20"
-            SizeRatio="0.9" />
+            CenterTo="220"
+            FontSize="20" Foreground="#FF4C09D8" />
 
 
 
