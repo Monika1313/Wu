@@ -17,9 +17,15 @@ namespace Wu.Wpf.ControlLibrary.Shapes
     /// </summary>
     public class RegularPolygon : Shape
     {
+
+        static RegularPolygon()
+        {
+            FillProperty.OverrideMetadata(typeof(RegularPolygon),new FrameworkPropertyMetadata(Brushes.MediumPurple));
+        }
+
+
         public RegularPolygon()
         {
-            SetCurrentValue(FillProperty, Brushes.MediumPurple);
             SetCurrentValue(StrokeThicknessProperty, 0d);
             SetCurrentValue(MinWidthProperty, 100d);
             SetCurrentValue(MinHeightProperty, 100d);
