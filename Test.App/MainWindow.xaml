@@ -59,23 +59,21 @@
 
 
 
-        <Shapes:RegularPolygon
+
+        <ShapeControls:RegularPolygonCtrl
             Grid.Row="1"
             Grid.Column="1"
             CornerRatio="1"
-            Fill="#FFCFFE7C"
+            Fill="#FFFFF2B0"
             SizeRatio="1" />
-
-
-
 
         <ControlLibrary:RingText
             Grid.Row="1"
             Grid.Column="1"
-            CenterTo="175"
-            FontSize="14"
-            Foreground="#FF0052FF"
-            Text="1中234567文中文中文" AngularSpacing="12" />
+            CenterTo="-135"
+            FontSize="20"
+            SizeRatio="0.9" />
+
 
 
 
