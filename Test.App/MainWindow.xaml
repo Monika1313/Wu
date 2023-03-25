@@ -2,6 +2,7 @@
     x:Class="Test.App.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ControlLibrary="clr-namespace:Wu.Wpf.ControlLibrary;assembly=Wu.Wpf.ControlLibrary"
     xmlns:ShapeControls="clr-namespace:Wu.Wpf.ControlLibrary.ShapeControls;assembly=Wu.Wpf.ControlLibrary"
     xmlns:Shapes="clr-namespace:Wu.Wpf.ControlLibrary.Shapes;assembly=Wu.Wpf.ControlLibrary"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -41,23 +42,7 @@
         </Shapes:RegularHexagon>
 
 
-        <ShapeControls:RegularHexagonCtrl
-            Margin="0"
-            CornerRatio="5"
-            SizeRatio="1" />
 
-        <Shapes:RegularPolygon
-            Grid.Row="1"
-            Grid.Column="1"
-            CornerRatio="1"
-            Fill="#FFCFFE7C"
-            SizeRatio="1" />
-
-        <Shapes:RegularPolygon
-            Grid.Row="1"
-            Grid.Column="1"
-            Sides="5"
-            SizeRatio="1" />
 
 
         <ShapeControls:RegularPolygonCtrl
@@ -67,8 +52,33 @@
         <ShapeControls:RegularPolygonCtrl
             Grid.Row="1"
             CornerRatio="3"
+            Fill="#FFD5F48B"
             Rotation="30"
             Sides="6"
             SizeRatio="1" />
+
+
+
+        <Shapes:RegularPolygon
+            Grid.Row="1"
+            Grid.Column="1"
+            CornerRatio="1"
+            Fill="#FFCFFE7C"
+            SizeRatio="1" />
+
+
+
+
+        <ControlLibrary:RingText
+            Grid.Row="1"
+            Grid.Column="1"
+            CenterTo="175"
+            FontSize="14"
+            Foreground="#FF0052FF"
+            Text="1中234567文中文中文" AngularSpacing="12" />
+
+
+
+
     </Grid>
 </Window>
