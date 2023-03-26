@@ -48,13 +48,13 @@ namespace Wu.Wpf.ControlLibrary
 
         [Category("Wu")]
         [Description("文字第一个字所在的角度 0°在X轴上")]
-        public double CenterTo
+        public double StartAngle
         {
-            get { return (double)GetValue(CenterToProperty); }
-            set { SetValue(CenterToProperty, value); }
+            get { return (double)GetValue(StartAngleProperty); }
+            set { SetValue(StartAngleProperty, value); }
         }
-        public static readonly DependencyProperty CenterToProperty =
-                    DependencyProperty.Register("CenterTo", typeof(double), typeof(RingText),
+        public static readonly DependencyProperty StartAngleProperty =
+                    DependencyProperty.Register("StartAngle", typeof(double), typeof(RingText),
                         new FrameworkPropertyMetadata(0.0,
                         FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender,
                         new PropertyChangedCallback(OnParamChanged)));
@@ -68,7 +68,7 @@ namespace Wu.Wpf.ControlLibrary
         }
         public static readonly DependencyProperty TextProperty =
                     DependencyProperty.Register("Text", typeof(string), typeof(RingText),
-                        new FrameworkPropertyMetadata("123中文abc123中文abc",
+                        new FrameworkPropertyMetadata("123中文abcABC",
                         FrameworkPropertyMetadataOptions.AffectsMeasure | FrameworkPropertyMetadataOptions.AffectsRender,
                         new PropertyChangedCallback(OnParamChanged)));
 
@@ -141,24 +141,20 @@ namespace Wu.Wpf.ControlLibrary
         private void RefreshLabels()
         {
             int count = Text.Length;//文字数量
-            if (count.Equals(0))
-            {
-                return;
-            }
             //控件宽高
             double width = ActualWidth;
             double height = ActualHeight;
-            if (width <= 0 || height <= 0)
+            //没有字符或控件没有宽高
+            if (count.Equals(0) || width <= 0 || height <= 0)
             {
                 container.Children.Clear();//清空
                 return;
             }
 
             Point ctrlCenter = new(width / 2.0, height / 2.0);//控件中心
-            double angle = CenterTo;//文字指向圆环的角度
+            double angle = StartAngle;//文字指向圆环的角度
             double lastAngle = 0;//上一个文字的角度
-            double value = 0;
-            Point p;
+            
 
             double radius = Math.Min(width, height) / 2.0 * SizeRatio;//圆环的半径
             container.Children.Clear();//清空
@@ -172,8 +168,6 @@ namespace Wu.Wpf.ControlLibrary
                     FontSize = FontSize,
                     Foreground = Foreground,
                     RenderTransformOrigin = new Point(0.5, 0.5), //以文字自身为旋转中心
-                    //RenderTransform = new RotateTransform(angle + 90),//文字本身的旋转角度
-                    //Background = Brushes.Black,
                     VerticalAlignment = VerticalAlignment.Center,
                     HorizontalAlignment = HorizontalAlignment.Center,
                     TextAlignment = TextAlignment.Center
@@ -184,7 +178,7 @@ namespace Wu.Wpf.ControlLibrary
 
                 if (IsARing)
                 {
-                    angle = 360.0 / count * i;
+                    angle = 360.0 / count * i + StartAngle;
                 }
                 else
                 {
@@ -193,7 +187,7 @@ namespace Wu.Wpf.ControlLibrary
                     //第一个字不需要旋转自身一般的角度
                     if (i == 0)
                     {
-                        angle = CenterTo % 360;//文字指向的角度为起始角度
+                        angle = StartAngle % 360;//文字指向的角度为起始角度
                     }
                     else
                     {
@@ -205,9 +199,9 @@ namespace Wu.Wpf.ControlLibrary
                 txt.RenderTransform = new RotateTransform(angle + 90);//文字本身的旋转角度
 
                 //设置文本在容器中的位置
-                p = PolarToCartesian(angle, radius);
-                Canvas.SetLeft(txt, ctrlCenter.X + p.X - txt.ActualWidth / 2.0);
-                Canvas.SetTop(txt, ctrlCenter.Y + p.Y - txt.ActualHeight / 2.0);
+                Point position = PolarToCartesian(angle, radius);
+                Canvas.SetLeft(txt, ctrlCenter.X + position.X - txt.ActualWidth / 2.0);
+                Canvas.SetTop(txt, ctrlCenter.Y + position.Y - txt.ActualHeight / 2.0);
             }
         }
 
