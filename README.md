@@ -6,7 +6,13 @@
 
 
 # 2 Wu.Wpf
-## Wu.Wpf.Converters
+|名称|功能|
+|-|-|
+|IsUIThread|判断是否为UI线程|
+|ExecuteFun|在UI线程执行方法|
+|ExecuteFunBeginInvoke|在UI线程执行方法|
+
+## 2.1 Wu.Wpf.Converters
 转换器
 |名称|功能|
 |-|-|
@@ -31,13 +37,6 @@
 |ScrollViewerExtensions|使ScrollViewer自动移动到最下方|
 |TextBoxExtensions|使TextBox支持获取焦点时全选|
 
-## Wu.Wpf.Common
-Wu.Wpf.Common.Utils
-|名称|功能|
-|-|-|
-|IsUIThread|判断是否为UI线程|
-|ExecuteFun|在UI线程执行方法|
-|ExecuteFunBeginInvoke|在UI线程执行方法|
 
 # Wu.CodeSnippets
 包含一些CodeSnippet代码段
