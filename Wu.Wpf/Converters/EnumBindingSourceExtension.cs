@@ -8,7 +8,9 @@ namespace Wu.Wpf.Converters
     /// </summary>
     /// <remarks>
     ///  示例
-    ///  <ComboBox ItemsSource="{Binding Source={cvt:EnumBindingSource {x:Type model:枚举类型}}}" />
+    ///  ① xaml添加引用 xmlns:wucvt="clr-namespace:Wu.Wpf.Converters;assembly=Wu.Wpf"
+    ///  ② 同时要添加枚举类的引用 xmlns:enums="该处根据实际设置"
+    ///  ③ 在需要绑定的地方如此绑定 <ComboBox ItemsSource="{Binding Source={wucvt:EnumBindingSource {x:Type enums:枚举类型}}}" />
     /// </remarks>
     public class EnumBindingSourceExtension : MarkupExtension
     {
