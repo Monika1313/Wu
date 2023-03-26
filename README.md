@@ -1,11 +1,11 @@
-# Wu
-## Wu.Extensions
+# 1 Wu
+## 1.1 Wu.Extensions
 包含一些String、DateTime等的扩展方法
-## Wu.Utils
+## 1.2 Wu.Utils
 包含Crc校验等
 
 
-# Wu.Wpf
+# 2 Wu.Wpf
 ## Wu.Wpf.Converters
 转换器
 |名称|功能|
