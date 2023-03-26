@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows;
 
-namespace Wu.Wpf.Common
+namespace Wu.Wpf
 {
     public static class Utils
     {
@@ -44,14 +44,13 @@ namespace Wu.Wpf.Common
             else { Application.Current.Dispatcher.BeginInvoke(() => { action(); }); }
         }
 
-
         /// <summary>
-        /// 计时方法所用的时间
+        /// 计时方法所用的时间  有些方法不支持计时
         /// </summary>
         /// <param name="action"></param>
         public static double ElapsedTime(Action action)
         {
-            System.Diagnostics.Stopwatch sw = new(); 
+            System.Diagnostics.Stopwatch sw = new();
             sw.Start();
             action();
             sw.Stop();
