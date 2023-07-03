@@ -103,9 +103,9 @@ namespace Wu.Extensions
             //季度
             int quaterNum;
             //DateTime dt0 = new DateTime(year, 1, 1);
-            DateTime dt1 = new DateTime(year, 4, 1);
-            DateTime dt2 = new DateTime(year, 7, 1);
-            DateTime dt3 = new DateTime(year, 10, 1);
+            DateTime dt1 = new(year, 4, 1);
+            DateTime dt2 = new(year, 7, 1);
+            DateTime dt3 = new(year, 10, 1);
             if (dateTime.CompareTo(dt1) < 0)
                 quaterNum = 1;
             else if (dateTime.CompareTo(dt2) < 0)
@@ -128,17 +128,13 @@ namespace Wu.Extensions
         public static DateTime BeginOfQuarter(int year, int quarter)
         {
             //该年该季度月初
-            switch (quarter)
+            return quarter switch
             {
-                case 1:
-                    return new DateTime(year, 1, 1);
-                case 2:
-                    return new DateTime(year, 4, 1);
-                case 3:
-                    return new DateTime(year, 7, 1);
-                default:
-                    return new DateTime(year, 10, 1);
-            }
+                1 => new DateTime(year, 1, 1),
+                2 => new DateTime(year, 4, 1),
+                3 => new DateTime(year, 7, 1),
+                _ => new DateTime(year, 10, 1),
+            };
         }
 
 
@@ -151,17 +147,13 @@ namespace Wu.Extensions
         public static DateTime EndOfQuarter(int year, int quarter)
         {
             //该年该季度月初
-            switch (quarter)
+            return quarter switch
             {
-                case 1:
-                    return EndOfMonth(new DateTime(year, 3, 1));
-                case 2:
-                    return EndOfMonth(new DateTime(year, 6, 1));
-                case 3:
-                    return EndOfMonth(new DateTime(year, 9, 1));
-                default:
-                    return EndOfMonth(new DateTime(year, 12, 1));
-            }
+                1 => EndOfMonth(new DateTime(year, 3, 31)),
+                2 => EndOfMonth(new DateTime(year, 6, 30)),
+                3 => EndOfMonth(new DateTime(year, 9, 30)),
+                _ => EndOfMonth(new DateTime(year, 12, 31)),
+            };
         }
 
 
