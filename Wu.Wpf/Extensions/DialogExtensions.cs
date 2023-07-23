@@ -12,6 +12,7 @@ namespace Wu.Wpf.Extensions
     /// </summary>
     public static class DialogExtensions
     {
+        #region 询问窗口
         /// <summary>
         /// 询问窗口
         /// </summary>
@@ -28,11 +29,39 @@ namespace Wu.Wpf.Extensions
             param.Add("dialogHostName", dialogHostName);
             var dialogResult = await dialogHost.ShowDialog("MsgView", param, dialogHostName);
             return dialogResult;
+        } 
+        #endregion
+
+
+        #region 页面等待消息
+        /// <summary>
+        /// 注册等待消息 (不带消息过滤器)
+        /// </summary>
+        /// <param name="aggregator"></param>
+        /// <param name="action"></param>
+        public static void Resgiter(this IEventAggregator aggregator, Action<UpdateModel> action)
+        {
+            //没有过滤器
+            aggregator.GetEvent<UpdateLoadingEvent>().Subscribe(action);
         }
 
+        /// <summary>
+        /// 注册等待消息 (带消息过滤器)
+        /// </summary>
+        /// <param name="aggregator"></param>
+        /// <param name="action"></param>
+        /// <param name="filterName">消息过滤器名称</param>
+        public static void Resgiter(this IEventAggregator aggregator, Action<UpdateModel> action, string filterName = "Main")
+        {
+            //带过滤器
+            aggregator.GetEvent<UpdateLoadingEvent>().Subscribe(action, ThreadOption.PublisherThread, true, (x) =>
+            {
+                return x.Filter.Equals(filterName);
+            });
+        }
 
         /// <summary>
-        /// 推送等待消息
+        /// 推送等待消息 不带过滤器的
         /// </summary>
         /// <param name="aggregator"></param>
         /// <param name="model"></param>
@@ -40,20 +69,11 @@ namespace Wu.Wpf.Extensions
         {
             aggregator.GetEvent<UpdateLoadingEvent>().Publish(model);
         }
-
-        /// <summary>
-        /// 注册等待消息
-        /// </summary>
-        /// <param name="aggregator"></param>
-        /// <param name="action"></param>
-        public static void Resgiter(this IEventAggregator aggregator, Action<UpdateModel> action)
-        {
-            aggregator.GetEvent<UpdateLoadingEvent>().Subscribe(action);
-
-        }
+        #endregion
 
 
 
+        #region 消息发布与订阅
         /// <summary>
         /// 注册提示消息事件
         /// </summary>
@@ -80,7 +100,7 @@ namespace Wu.Wpf.Extensions
                 Message = msg,
                 Filter = filterName
             });
-        }
-
+        } 
+        #endregion
     }
 }

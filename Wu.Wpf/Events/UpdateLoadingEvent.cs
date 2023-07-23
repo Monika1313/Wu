@@ -11,6 +11,11 @@ namespace Wu.Wpf.Events
         /// 数据更新窗口是否打开
         /// </summary>
         public bool IsOpen { get; set; }
+
+        /// <summary>
+        /// 过滤器
+        /// </summary>
+        public string Filter { get; set; } = string.Empty;
     }
 
     public class UpdateLoadingEvent : PubSubEvent<UpdateModel>
