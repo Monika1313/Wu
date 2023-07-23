@@ -29,7 +29,7 @@ namespace Wu.Wpf.Extensions
             param.Add("dialogHostName", dialogHostName);
             var dialogResult = await dialogHost.ShowDialog("MsgView", param, dialogHostName);
             return dialogResult;
-        } 
+        }
         #endregion
 
 
@@ -100,7 +100,7 @@ namespace Wu.Wpf.Extensions
                 Message = msg,
                 Filter = filterName
             });
-        } 
+        }
         #endregion
     }
 }
