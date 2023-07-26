@@ -15,7 +15,7 @@ namespace Wu.Wpf.Events
         /// <summary>
         /// 过滤器
         /// </summary>
-        public string Filter { get; set; } = string.Empty;
+        public string Filter { get; set; } = "Main";
     }
 
     public class UpdateLoadingEvent : PubSubEvent<UpdateModel>

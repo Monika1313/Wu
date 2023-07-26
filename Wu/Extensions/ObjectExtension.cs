@@ -44,7 +44,7 @@ namespace Wu.Extensions
             private static Func<TIn, TOut> GetFunc()
             {
                 ParameterExpression parameterExpression = Expression.Parameter(typeof(TIn), "p");
-                List<MemberBinding> memberBindingList = new List<MemberBinding>();
+                List<MemberBinding> memberBindingList = new();
                 foreach (var item in typeof(TOut).GetProperties())
                 {
                     if (!item.CanWrite) continue;
