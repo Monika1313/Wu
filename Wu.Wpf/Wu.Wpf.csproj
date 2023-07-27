@@ -8,14 +8,15 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Authors>Monika1313</Authors>
 		<Description>Wu.Wpf类库</Description>
-		<Version>1.0.9</Version>
+		<Version>1.0.10</Version>
 		<Title>Wu.Wpf</Title>
 		<PackageIcon>logo.png</PackageIcon>
 		<RepositoryUrl>https://github.com/Monika1313/Wu</RepositoryUrl>
+		<PackageProjectUrl>https://github.com/Monika1313/Wu</PackageProjectUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Include="..\..\..\..\..\Desktop\logo.png">
+	  <None Include="..\logo.png">
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
