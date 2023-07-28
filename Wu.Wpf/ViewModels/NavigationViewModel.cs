@@ -55,5 +55,18 @@ namespace Wu.ViewModels
                 IsOpen = IsOpen
             });
         }
+
+        /// <summary>
+        /// 打开等待窗口 默认发送至主窗口
+        /// </summary>
+        /// <param name="IsOpen"></param>
+        public void UpdateLoading(bool IsOpen, string filter = "Main")
+        {
+            aggregator.UpdateLoading(new UpdateModel()
+            {
+                IsOpen = IsOpen,
+                Filter = filter
+            });
+        }
     }
 }
