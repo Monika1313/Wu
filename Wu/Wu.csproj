@@ -2,16 +2,18 @@
 
   <PropertyGroup>
 	<TargetFrameworks>net48;net6.0;net7.0</TargetFrameworks>
-	<LangVersion>10.0</LangVersion>
+	<LangVersion>latestMajor</LangVersion>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>Wu</PackageId>
     <Authors>Monika1313</Authors>
     <Description>Wu通用工具类</Description>
-    <Version>1.0.6</Version>
+    <Version>1.0.7</Version>
     <PackageProjectUrl>https://github.com/Monika1313/Wu</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Monika1313/Wu</RepositoryUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <IncludeSymbols>False</IncludeSymbols>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,15 +23,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
 	  <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
 
 </Project>

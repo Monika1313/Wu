@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿#if !NETFRAMEWORK
+    using System.ComponentModel.DataAnnotations;
+#endif
 using System.ComponentModel;
 using System.Reflection;
 using System.Linq;
@@ -21,11 +23,14 @@ namespace Wu.Extensions
         public static string GetDisplayName<T>(this string propName)
         {
             var disp = typeof(T).GetProperties().FirstOrDefault(prop => prop.Name.Equals(propName))?.GetCustomAttribute<DisplayNameAttribute>()?.DisplayName ?? string.Empty;
+#if !NETFRAMEWORK
             if (string.IsNullOrWhiteSpace(disp))
                 disp = typeof(T).GetProperties().FirstOrDefault(prop => prop.Name.Equals(propName))?.GetCustomAttribute<DisplayAttribute>()?.Name ?? string.Empty;
+#endif
             return disp;
         }
 
+#if !NETFRAMEWORK
         /// <summary>
         /// 获取DisplayName
         /// 优先获取DisplayAttribute , 没有设置再获取DisplayNameAttribute
@@ -40,10 +45,6 @@ namespace Wu.Extensions
                 disp = typeof(T).GetProperties().FirstOrDefault(prop => prop.Name.Equals(propName))?.GetCustomAttribute<DisplayNameAttribute>()?.DisplayName ?? string.Empty;
             return disp;
         }
-
-
-
-
         #region 另一种实现方式
         /// <summary>
         /// 获取DisplayName
@@ -79,6 +80,11 @@ namespace Wu.Extensions
             return disp;
         } 
         #endregion
+#endif
+
+
+
+
 
     }
 }

@@ -15,7 +15,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wu.CodeSnippets", "Wu.CodeS
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{87AD1482-58F6-4810-B538-25C4DC14E9C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.App", "Test.App\Test.App.csproj", "{463425B4-403A-4C7A-8D28-1AE4CC6D95B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.App", "Test.App\Test.App.csproj", "{463425B4-403A-4C7A-8D28-1AE4CC6D95B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Logo", "Logo", "{DFDE19E3-96D8-48BA-8917-E649628993CD}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Desktop\logo.png = ..\..\..\..\Desktop\logo.png
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
