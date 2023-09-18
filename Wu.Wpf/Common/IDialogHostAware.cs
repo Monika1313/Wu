@@ -14,7 +14,7 @@ namespace Wu.Wpf.Common
         /// 打开过程中执行
         /// </summary>
         /// <param name="parameters">接收参数</param>
-        void OnDialogOpend(IDialogParameters parameters);
+        void OnDialogOpened(IDialogParameters parameters);
 
         /// <summary>
         /// 确定

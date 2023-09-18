@@ -48,7 +48,7 @@ namespace Wu.Wpf.Common
             {
                 if (viewModel is IDialogHostAware aware)
                 {
-                    aware.OnDialogOpend(parameters);
+                    aware.OnDialogOpened(parameters);
                 }
                 //更新窗口值
                 args.Session.UpdateContent(content);
