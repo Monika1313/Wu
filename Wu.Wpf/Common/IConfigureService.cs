@@ -1,7 +1,6 @@
-﻿namespace Wu.Wpf.Common
+﻿namespace Wu.Wpf.Common;
+
+public interface IConfigureService
 {
-    public interface IConfigureService
-    {
-        void Configure();
-    }
+    void Configure();
 }

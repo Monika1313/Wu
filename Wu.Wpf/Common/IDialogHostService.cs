@@ -1,17 +1,13 @@
-﻿using Prism.Services.Dialogs;
-using System.Threading.Tasks;
+﻿namespace Wu.Wpf.Common;
 
-namespace Wu.Wpf.Common
+public interface IDialogHostService : IDialogService
 {
-    public interface IDialogHostService : IDialogService
-    {
-        /// <summary>
-        /// Prism弹窗
-        /// </summary>
-        /// <param name="name">模块名称</param>
-        /// <param name="parameters"></param>
-        /// <param name="dialogHostName"></param>
-        /// <returns></returns>
-        Task<IDialogResult> ShowDialog(string name, IDialogParameters parameters, string dialogHostName = "Root");
-    }
+    /// <summary>
+    /// Prism弹窗
+    /// </summary>
+    /// <param name="name">模块名称</param>
+    /// <param name="parameters"></param>
+    /// <param name="dialogHostName"></param>
+    /// <returns></returns>
+    Task<IDialogResult> ShowDialog(string name, IDialogParameters parameters, string dialogHostName = "Root");
 }

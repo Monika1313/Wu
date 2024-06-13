@@ -1,12 +1,9 @@
-﻿using Prism.Mvvm;
+﻿namespace Wu.Wpf.ViewModels;
 
-namespace Wu.Wpf.ViewModels
+public class PrismUserControl1ViewModel : BindableBase
 {
-    public class PrismUserControl1ViewModel : BindableBase
+    public PrismUserControl1ViewModel()
     {
-        public PrismUserControl1ViewModel()
-        {
 
-        }
     }
 }
