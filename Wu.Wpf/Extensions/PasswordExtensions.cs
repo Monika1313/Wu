@@ -50,7 +50,8 @@ public class PasswordBehavior : Behavior<PasswordBox>
     /// <param name="e"></param>
     private void AssociatedObject_PasswordChanged(object sender, RoutedEventArgs e)
     {
-        PasswordBox passwordBox = sender as PasswordBox;
+        if (sender is not PasswordBox passwordBox)
+            return;
         string password = PasswordExtensions.GetPassword(passwordBox);
 
         if (passwordBox != null && passwordBox.Password != password)

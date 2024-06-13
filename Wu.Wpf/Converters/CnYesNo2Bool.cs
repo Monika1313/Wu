@@ -5,7 +5,7 @@
 /// </summary>
 public class CnYesNo2Bool : ValueConverterBase<CnYesNo2Bool>
 {
-    public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    public override object? Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
         if (value == null || string.IsNullOrWhiteSpace(value?.ToString()))
             return null;
@@ -17,7 +17,7 @@ public class CnYesNo2Bool : ValueConverterBase<CnYesNo2Bool>
         return false;
     }
 
-    public override object? ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
         if (value is bool val && val == true)
         {
