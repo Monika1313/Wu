@@ -16,3 +16,4 @@ global using System.Windows.Markup;
 global using Wu.Wpf.Common;
 global using Wu.Wpf.Events;
 global using Wu.Wpf.Extensions;
+global using CommunityToolkit.Mvvm.ComponentModel;

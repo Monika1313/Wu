@@ -3,7 +3,7 @@
 /// <summary>
 /// 窗口导航类
 /// </summary>
-public class NavigationViewModel : BindableBase, INavigationAware
+public class NavigationViewModel : ObservableObject, INavigationAware
 {
     private readonly IContainerProvider provider;
     public readonly IEventAggregator aggregator;//事件聚合器

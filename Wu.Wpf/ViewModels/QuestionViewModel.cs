@@ -3,7 +3,7 @@
 /// <summary>
 /// 询问窗口 ViewModel
 /// </summary>
-public class QuestionViewModel : BindableBase, IDialogHostAware
+public class QuestionViewModel : ObservableObject, IDialogHostAware
 {
     public QuestionViewModel()
     {
