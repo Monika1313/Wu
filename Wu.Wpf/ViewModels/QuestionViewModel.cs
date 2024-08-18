@@ -3,30 +3,21 @@
 /// <summary>
 /// 询问窗口 ViewModel
 /// </summary>
-public class QuestionViewModel : ObservableObject, IDialogHostAware
+public partial class QuestionViewModel : ObservableObject, IDialogHostAware
 {
-    public QuestionViewModel()
-    {
-        SaveCommand = new DelegateCommand(Save);
-        CancelCommand = new DelegateCommand(Cancel);
-    }
-
     /// <summary>
     /// 标题
     /// </summary>
-    public string Title { get => _Title; set => SetProperty(ref _Title, value); }
-    private string _Title;
+    [ObservableProperty]
+    string title = string.Empty;
 
     /// <summary>
     /// 内容
     /// </summary>
-    public string Content { get => _Content; set => SetProperty(ref _Content, value); }
-    private string _Content;
-
+    [ObservableProperty]
+    string content = string.Empty;
 
     public string DialogHostName { get; set; } = "Root";
-    public DelegateCommand SaveCommand { get; set; }
-    public DelegateCommand CancelCommand { get; set; }
 
     public void OnDialogOpened(IDialogParameters parameters)
     {
@@ -40,6 +31,7 @@ public class QuestionViewModel : ObservableObject, IDialogHostAware
     /// <summary>
     /// 取消
     /// </summary>
+    [RelayCommand]
     private void Cancel()
     {
         //若窗口处于打开状态则关闭
@@ -51,6 +43,7 @@ public class QuestionViewModel : ObservableObject, IDialogHostAware
     /// <summary>
     /// 保存
     /// </summary>
+    [RelayCommand]
     private void Save()
     {
         if (!DialogHost.IsDialogOpen(DialogHostName))

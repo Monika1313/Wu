@@ -16,10 +16,10 @@ public interface IDialogHostAware
     /// <summary>
     /// 确定
     /// </summary>
-    DelegateCommand SaveCommand { get; set; }
+    IRelayCommand SaveCommand { get;}
 
     /// <summary>
     /// 取消
     /// </summary>
-    DelegateCommand CancelCommand { get; set; }
+    IRelayCommand CancelCommand { get;}
 }

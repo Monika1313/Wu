@@ -18,3 +18,4 @@ global using Wu.Wpf.Events;
 global using Wu.Wpf.Extensions;
 global using Wu.Wpf.Converters;
 global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;
